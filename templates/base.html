@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Florería</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body class="bg-purple-50">
+    <header class="barra-navegacion">
+
+        <div class="logo-floreria">🌼 Florería</div>
+        <nav class="menu">
+            <a href="/" class="{% if request.path == '/' %}activo{% endif %}">INICIO</a>
+            <a href="/flores" class="{% if request.path == '/flores' %}activo{% endif %}">FLORES</a>
+         </nav>
+            <a href="https://www.instagram.com/f.yos_/" target="_blank" class="instagram">📷 INSTAGRAM</a>
+
+    </header>
+
+    <div class="max-w-2xl mx-auto mt-12 px-4">
+        {% block cuerpo %}
+        {% endblock %}
+    </div>
+</body>
+</html>
